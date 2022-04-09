@@ -1,4 +1,4 @@
-import type { ParseTagFunc, ValidatorFunc } from './typings';
+import type { EmailTagData, ParseTagData, ParseTagFunc, ValidatorFunc } from './typings';
 
 export const sleep = (time: number) =>
   new Promise<number>((resolve) => {
@@ -37,12 +37,12 @@ const emailChecker = (text: string) => {
   return EMAIL.test(text);
 };
 
-export const emailValidator = (text: string) => {
+export const emailValidator: ValidatorFunc = (text: string) => {
   const emial = parseEmailTag(text);
-  return emial.address && emailChecker(emial.address);
+  return !!emial.address && emailChecker(emial.address);
 };
 
-export const parseEmailTag = (text: string) => {
+export const parseEmailTag: ParseTagFunc<EmailTagData> = (text: string) => {
   if (HAS_DETAILS.test(text)) {
     const emailExpArray = HAS_DETAILS.exec(text)!;
     return {

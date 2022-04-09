@@ -5,13 +5,26 @@ export type TagData = {
   invalid?: boolean;
 };
 
-export type ParseTagData = {
+export interface ParseTagData {
   name: string;
+}
+
+export type TagsInputProps = {
+  className?: string;
+  validate?: ValidatorFunc;
+  parseTag?: ParseTagFunc<ParseTagData>;
+  value?: string[];
+  placeholder?: string;
+  onChange?: (tags: string[]) => void;
 };
+
+export interface EmailTagData extends ParseTagData {
+  address?: string | null;
+}
 
 export type ValidatorFunc = (text: string) => boolean;
 
-export type ParseTagFunc = (text: string) => ParseTagData;
+export type ParseTagFunc<T extends ParseTagData> = (text: string) => T;
 
 export type InnerParseTagFunc = (text: string) => TagData;
 

@@ -5,7 +5,7 @@ import { useClickAway } from 'react-use';
 
 import { defaultParseTag, defaultValidate, uuid } from './utils';
 
-import type { InnerParseTagFunc, ParseTagFunc, TagData, TagEditingRef, ValidatorFunc } from './typings';
+import type { InnerParseTagFunc, TagData, TagEditingRef, TagsInputProps } from './typings';
 import TagEditing from './TagEditing';
 import Tag from './Tag';
 
@@ -18,15 +18,6 @@ type TagsInputState = {
   selectedKey?: string;
   activeIndex: number;
   tags: (TagData | 'input')[];
-};
-
-export type TagsInputProps = {
-  className?: string;
-  validate?: ValidatorFunc;
-  parseTag?: ParseTagFunc;
-  value?: string[];
-  placeholder?: string;
-  onChange?: (tags: string[]) => void;
 };
 
 function initialState(tags: string[], parseTag: InnerParseTagFunc): TagsInputState {

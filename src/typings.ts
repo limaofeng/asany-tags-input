@@ -24,7 +24,7 @@ export interface EmailTagData extends ParseTagData {
 
 export type ValidatorFunc = (text: string) => boolean;
 
-export type ParseTagFunc<T extends ParseTagData> = (text: string) => T;
+export type ParseTagFunc<T extends ParseTagData = ParseTagData> = (text: string) => T;
 
 export type InnerParseTagFunc = (text: string) => TagData;
 

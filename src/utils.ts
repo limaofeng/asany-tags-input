@@ -1,4 +1,4 @@
-import type { EmailTagData, ParseTagData, ParseTagFunc, ValidatorFunc } from './typings';
+import type { EmailTagData, ParseTagFunc, ValidatorFunc } from './typings';
 
 export const sleep = (time: number) =>
   new Promise<number>((resolve) => {

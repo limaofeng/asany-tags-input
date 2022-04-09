@@ -15,16 +15,9 @@ const meta: Meta = {
 
 export default meta;
 
-const defaultStyle = {
-  border: '1px dashed gray',
-  padding: '0.5rem 1rem',
-  marginBottom: '.5rem',
-  marginRight: '.5rem',
-  backgroundColor: 'white',
-};
-
 const Template: Story<any> = (args) => {
-  return <TagsInput placeholder="输入标签..." />;
+  const { placeholder } = args;
+  return <TagsInput placeholder={placeholder} />;
 };
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -33,4 +26,6 @@ export const Default = Template.bind({});
 
 Default.storyName = '基础';
 
-Default.args = {};
+Default.args = {
+  placeholder: '输入标签...',
+};

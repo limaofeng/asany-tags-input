@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/limaofeng/asany-tags-input/compare/v0.1.0...v0.1.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* 导出 TagsInputProps 及解决  emailValidator TS 警告 ([83336e7](https://github.com/limaofeng/asany-tags-input/commit/83336e782b7debe8ddcf010dd1dafeeaf9c62172))
+
+
+
 # 0.1.0 (2022-04-09)
 
 
